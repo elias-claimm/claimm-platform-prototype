@@ -1,6 +1,6 @@
 export default function FilterBar({ filters, onChange, projekte, statusOptions, verantwortliche }) {
   const selectClass =
-    'text-sm border border-claimm-dark/20 rounded px-3 py-2 bg-white text-claimm-dark focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red'
+    'text-sm border border-claimm-dark/20 dark:border-white/20 rounded px-3 py-2 bg-white dark:bg-white/10 text-claimm-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red'
 
   return (
     <div className="flex flex-wrap gap-3">

@@ -15,10 +15,10 @@ export default function Nachtragslebenszyklus() {
   }
 
   return (
-    <div className="min-h-full bg-claimm-beige">
+    <div className="min-h-full bg-claimm-beige dark:bg-claimm-dark transition-colors">
       <div className="px-8 pt-6">
-        <h1 className="text-2xl font-semibold text-claimm-dark">Nachtragslebenszyklus</h1>
-        <p className="text-sm text-claimm-dark/60 mt-1">
+        <h1 className="text-2xl font-semibold text-claimm-dark dark:text-white">Nachtragslebenszyklus</h1>
+        <p className="text-sm text-claimm-dark/60 dark:text-white/50 mt-1">
           NT-2026-014 · KAU Köln · Behinderung nach § 6 VOB/B
         </p>
       </div>

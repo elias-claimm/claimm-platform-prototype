@@ -13,8 +13,8 @@ export default function DeadlinesWidget() {
               <AmpelDot status={f.ampel} />
             </span>
             <div className="min-w-0">
-              <p className="text-sm text-claimm-dark leading-snug">{f.titel}</p>
-              <p className="text-xs text-claimm-dark/50 mt-0.5">
+              <p className="text-sm text-claimm-dark dark:text-white leading-snug">{f.titel}</p>
+              <p className="text-xs text-claimm-dark/50 dark:text-white/40 mt-0.5">
                 {f.typ} · {f.datum}
                 {f.zeit ? ` · ${f.zeit}` : ''}
               </p>

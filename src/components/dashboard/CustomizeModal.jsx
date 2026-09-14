@@ -27,14 +27,14 @@ export default function CustomizeModal({ widgets, onSave, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
-      <div className="bg-white rounded-md max-w-md w-full p-6">
+      <div className="bg-white dark:bg-claimm-dark border border-transparent dark:border-white/10 rounded-md max-w-md w-full p-6">
         <div className="flex items-center justify-between mb-1">
-          <h3 className="text-lg font-semibold text-claimm-dark">Dashboard anpassen</h3>
-          <button onClick={onClose} className="text-claimm-dark/40 hover:text-claimm-dark">
+          <h3 className="text-lg font-semibold text-claimm-dark dark:text-white">Dashboard anpassen</h3>
+          <button onClick={onClose} className="text-claimm-dark/40 dark:text-white/40 hover:text-claimm-dark dark:hover:text-white">
             <X size={18} />
           </button>
         </div>
-        <p className="text-xs text-claimm-dark/50 mb-4">
+        <p className="text-xs text-claimm-dark/50 dark:text-white/40 mb-4">
           Widgets ein-/ausblenden und per Drag &amp; Drop neu anordnen.
         </p>
 
@@ -45,10 +45,10 @@ export default function CustomizeModal({ widgets, onSave, onClose }) {
               draggable
               onDragStart={() => handleDragStart(index)}
               onDragOver={(e) => handleDragOver(e, index)}
-              className="flex items-center gap-3 border border-claimm-dark/10 rounded px-3 py-2.5 bg-claimm-beige/40 cursor-grab active:cursor-grabbing"
+              className="flex items-center gap-3 border border-claimm-dark/10 dark:border-white/10 rounded px-3 py-2.5 bg-claimm-beige/40 dark:bg-white/5 cursor-grab active:cursor-grabbing"
             >
-              <GripVertical size={16} className="text-claimm-dark/30 shrink-0" />
-              <span className="text-sm text-claimm-dark flex-1">{w.label}</span>
+              <GripVertical size={16} className="text-claimm-dark/30 dark:text-white/30 shrink-0" />
+              <span className="text-sm text-claimm-dark dark:text-white flex-1">{w.label}</span>
               <label className="inline-flex items-center cursor-pointer">
                 <input
                   type="checkbox"
@@ -64,7 +64,7 @@ export default function CustomizeModal({ widgets, onSave, onClose }) {
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 text-sm font-medium py-2 rounded border border-claimm-dark/20 text-claimm-dark hover:bg-claimm-dark/5 transition-colors"
+            className="flex-1 text-sm font-medium py-2 rounded border border-claimm-dark/20 dark:border-white/20 text-claimm-dark dark:text-white hover:bg-claimm-dark/5 dark:hover:bg-white/10 transition-colors"
           >
             Abbrechen
           </button>

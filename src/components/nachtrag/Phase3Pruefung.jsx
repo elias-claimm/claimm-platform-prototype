@@ -14,12 +14,12 @@ export default function Phase3Pruefung({ onNext }) {
   return (
     <div className="max-w-3xl flex flex-col gap-6">
       <div>
-        <h2 className="text-lg font-semibold text-claimm-dark mb-1">Prüfung</h2>
-        <p className="text-sm text-claimm-dark/60">Zweistufige Nachtragsprüfung dem Grunde und der Höhe nach.</p>
+        <h2 className="text-lg font-semibold text-claimm-dark dark:text-white mb-1">Prüfung</h2>
+        <p className="text-sm text-claimm-dark/60 dark:text-white/50">Zweistufige Nachtragsprüfung dem Grunde und der Höhe nach.</p>
       </div>
 
-      <div className="bg-white border border-claimm-dark/10 rounded-md">
-        <div className="flex border-b border-claimm-dark/10 px-2">
+      <div className="bg-white dark:bg-white/5 border border-claimm-dark/10 dark:border-white/10 rounded-md">
+        <div className="flex border-b border-claimm-dark/10 dark:border-white/10 px-2">
           {TABS.map((t) => (
             <button
               key={t}
@@ -27,7 +27,7 @@ export default function Phase3Pruefung({ onNext }) {
               className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
                 tab === t
                   ? 'border-claimm-red text-claimm-red'
-                  : 'border-transparent text-claimm-dark/50 hover:text-claimm-dark'
+                  : 'border-transparent text-claimm-dark/50 dark:text-white/40 hover:text-claimm-dark dark:hover:text-white'
               }`}
             >
               {t}
@@ -35,16 +35,16 @@ export default function Phase3Pruefung({ onNext }) {
           ))}
         </div>
         <div className="p-5">
-          <p className="text-sm text-claimm-dark/80 leading-relaxed">
+          <p className="text-sm text-claimm-dark/80 dark:text-white/70 leading-relaxed">
             {tab === TABS[0] ? pruefungGrund : pruefungHoehe}
           </p>
         </div>
       </div>
 
-      <div className="bg-white border border-claimm-dark/10 rounded-md overflow-x-auto">
+      <div className="bg-white dark:bg-white/5 border border-claimm-dark/10 dark:border-white/10 rounded-md overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-claimm-dark/10 text-left text-xs text-claimm-dark/50">
+            <tr className="border-b border-claimm-dark/10 dark:border-white/10 text-left text-xs text-claimm-dark/50 dark:text-white/40">
               <th className="px-4 py-3 font-medium">Pos.</th>
               <th className="px-4 py-3 font-medium">Bezeichnung</th>
               <th className="px-4 py-3 font-medium text-right">Menge</th>
@@ -56,20 +56,20 @@ export default function Phase3Pruefung({ onNext }) {
           </thead>
           <tbody>
             {positionsliste.map((p) => (
-              <tr key={p.pos} className="border-b border-claimm-dark/5 last:border-0">
-                <td className="px-4 py-3 text-claimm-dark/70">{p.pos}</td>
-                <td className="px-4 py-3 text-claimm-dark">{p.bezeichnung}</td>
-                <td className="px-4 py-3 text-right text-claimm-dark/70 whitespace-nowrap">
+              <tr key={p.pos} className="border-b border-claimm-dark/5 dark:border-white/5 last:border-0">
+                <td className="px-4 py-3 text-claimm-dark/70 dark:text-white/60">{p.pos}</td>
+                <td className="px-4 py-3 text-claimm-dark dark:text-white">{p.bezeichnung}</td>
+                <td className="px-4 py-3 text-right text-claimm-dark/70 dark:text-white/60 whitespace-nowrap">
                   {p.menge} {p.einheit}
                 </td>
-                <td className="px-4 py-3 text-right text-claimm-dark/70 whitespace-nowrap">{formatEUR(p.ep)}</td>
-                <td className="px-4 py-3 text-right text-claimm-dark whitespace-nowrap">{formatEUR(p.gp)}</td>
-                <td className="px-4 py-3 text-right text-claimm-dark whitespace-nowrap">
+                <td className="px-4 py-3 text-right text-claimm-dark/70 dark:text-white/60 whitespace-nowrap">{formatEUR(p.ep)}</td>
+                <td className="px-4 py-3 text-right text-claimm-dark dark:text-white whitespace-nowrap">{formatEUR(p.gp)}</td>
+                <td className="px-4 py-3 text-right text-claimm-dark dark:text-white whitespace-nowrap">
                   {formatEUR(p.gepruefterWert)}
                 </td>
                 <td
                   className={`px-4 py-3 text-right whitespace-nowrap font-medium ${
-                    p.differenz < 0 ? 'text-claimm-red' : 'text-claimm-dark/50'
+                    p.differenz < 0 ? 'text-claimm-red' : 'text-claimm-dark/50 dark:text-white/40'
                   }`}
                 >
                   {p.differenz === 0 ? '–' : formatEUR(p.differenz)}
@@ -80,12 +80,12 @@ export default function Phase3Pruefung({ onNext }) {
         </table>
       </div>
 
-      <div className="bg-white border border-claimm-dark/10 rounded-md p-5">
+      <div className="bg-white dark:bg-white/5 border border-claimm-dark/10 dark:border-white/10 rounded-md p-5">
         <div className="flex items-center gap-2 mb-2">
           <Sparkles size={16} className="text-claimm-red" />
           <span className="text-xs font-semibold text-claimm-red uppercase tracking-wide">KI-Zusammenfassung</span>
         </div>
-        <p className="text-sm text-claimm-dark/80 leading-relaxed">{pruefungZusammenfassung}</p>
+        <p className="text-sm text-claimm-dark/80 dark:text-white/70 leading-relaxed">{pruefungZusammenfassung}</p>
       </div>
 
       <button

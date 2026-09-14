@@ -36,9 +36,9 @@ export default function KpiBar({ perspektive, nachtraege }) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
       {kpis.map((kpi) => (
-        <div key={kpi.label} className="bg-white border border-claimm-dark/10 rounded-md p-4">
-          <p className="text-xs text-claimm-dark/50">{kpi.label}</p>
-          <p className="text-xl font-semibold text-claimm-dark mt-1">{formatEUR(kpi.value)}</p>
+        <div key={kpi.label} className="bg-white dark:bg-white/5 border border-claimm-dark/10 dark:border-white/10 rounded-md p-4">
+          <p className="text-xs text-claimm-dark/50 dark:text-white/40">{kpi.label}</p>
+          <p className="text-xl font-semibold text-claimm-dark dark:text-white mt-1">{formatEUR(kpi.value)}</p>
         </div>
       ))}
     </div>

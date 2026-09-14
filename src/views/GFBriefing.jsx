@@ -18,11 +18,11 @@ export default function GFBriefing() {
   const uhrzeit = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })
 
   return (
-    <div className="min-h-full bg-[#1A1A1A]">
-      <div className="flex items-start justify-between px-8 py-6 border-b border-white/10">
+    <div className="min-h-full bg-claimm-beige dark:bg-claimm-dark transition-colors">
+      <div className="flex items-start justify-between px-8 py-6 border-b border-claimm-dark/10 dark:border-white/10">
         <div>
-          <h1 className="text-2xl font-semibold text-white">Guten Morgen, Michal.</h1>
-          <p className="text-sm text-white/50 mt-1">
+          <h1 className="text-2xl font-semibold text-claimm-dark dark:text-white">Guten Morgen, Michal.</h1>
+          <p className="text-sm text-claimm-dark/60 dark:text-white/50 mt-1">
             {datum} · {uhrzeit}
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function GFBriefing() {
         <MorningBriefing />
 
         <div>
-          <h2 className="text-sm font-semibold text-white/70 uppercase tracking-wide mb-3">Entscheidungen heute</h2>
+          <h2 className="text-sm font-semibold text-claimm-dark/70 dark:text-white/70 uppercase tracking-wide mb-3">Entscheidungen heute</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {gfEntscheidungen.map((d) => (
               <DecisionCard key={d.id} decision={d} />

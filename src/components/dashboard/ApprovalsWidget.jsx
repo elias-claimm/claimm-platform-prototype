@@ -16,15 +16,15 @@ export default function ApprovalsWidget() {
     <WidgetCard title="Offene Freigaben" icon={Check}>
       <ul className="flex flex-col gap-3">
         {freigaben.map((f) => (
-          <li key={f.id} className="border border-claimm-dark/10 rounded p-3">
-            <p className="text-sm text-claimm-dark leading-snug">{f.titel}</p>
-            <p className="text-xs text-claimm-dark/50 mt-1">
+          <li key={f.id} className="border border-claimm-dark/10 dark:border-white/10 rounded p-3">
+            <p className="text-sm text-claimm-dark dark:text-white leading-snug">{f.titel}</p>
+            <p className="text-xs text-claimm-dark/50 dark:text-white/40 mt-1">
               {f.modul} · {f.antragsteller} · Frist {f.frist}
             </p>
             {f.entscheidung ? (
               <p className="text-xs font-medium mt-2">
                 {f.entscheidung === 'freigegeben' ? (
-                  <span className="text-green-700">Freigegeben</span>
+                  <span className="text-green-700 dark:text-green-400">Freigegeben</span>
                 ) : (
                   <span className="text-claimm-red">Abgelehnt</span>
                 )}

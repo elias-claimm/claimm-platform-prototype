@@ -11,7 +11,7 @@ export default function AmpelDot({ status, label }) {
         className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
         style={{ backgroundColor: COLORS[status] || '#9CA3AF' }}
       />
-      {label && <span className="text-xs text-claimm-dark/70">{label}</span>}
+      {label && <span className="text-xs text-claimm-dark/70 dark:text-white/60">{label}</span>}
     </span>
   )
 }

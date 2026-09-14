@@ -9,8 +9,8 @@ export default function NewsWidget() {
         {neuigkeiten.map((n) => (
           <li key={n.id}>
             <p className="text-xs font-medium text-claimm-red">{n.typ}</p>
-            <p className="text-sm text-claimm-dark leading-snug mt-0.5">{n.text}</p>
-            <p className="text-xs text-claimm-dark/40 mt-0.5">{n.zeit}</p>
+            <p className="text-sm text-claimm-dark dark:text-white leading-snug mt-0.5">{n.text}</p>
+            <p className="text-xs text-claimm-dark/40 dark:text-white/30 mt-0.5">{n.zeit}</p>
           </li>
         ))}
       </ul>

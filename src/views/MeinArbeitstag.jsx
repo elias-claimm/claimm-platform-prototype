@@ -50,13 +50,13 @@ export default function MeinArbeitstag() {
   const firstName = currentUser.name.split(' ')[0]
 
   return (
-    <div className="min-h-full bg-claimm-beige">
+    <div className="min-h-full bg-claimm-beige dark:bg-claimm-dark transition-colors">
       <Header
         greetingName={firstName}
         action={
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 text-sm font-medium text-claimm-dark border border-claimm-dark/20 rounded px-3 py-2 hover:bg-white transition-colors shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-medium text-claimm-dark dark:text-white border border-claimm-dark/20 dark:border-white/20 rounded px-3 py-2 hover:bg-white dark:hover:bg-white/10 transition-colors shrink-0"
           >
             <Settings2 size={16} />
             Dashboard anpassen

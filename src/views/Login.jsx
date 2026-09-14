@@ -10,7 +10,7 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-claimm-beige flex items-center justify-center px-4">
+    <div className="min-h-screen bg-claimm-beige dark:bg-claimm-dark flex items-center justify-center px-4 transition-colors">
       <div className="w-full max-w-sm">
         <div className="flex justify-center mb-10">
           <img src={logo} alt="claim.m" className="h-12 w-auto" />
@@ -18,29 +18,29 @@ export default function Login() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white border border-claimm-dark/10 rounded-md p-8 flex flex-col gap-4"
+          className="bg-white dark:bg-white/5 border border-claimm-dark/10 dark:border-white/10 rounded-md p-8 flex flex-col gap-4"
         >
           <div>
-            <label className="block text-xs font-medium text-claimm-dark/70 mb-1.5" htmlFor="email">
+            <label className="block text-xs font-medium text-claimm-dark/70 dark:text-white/60 mb-1.5" htmlFor="email">
               E-Mail
             </label>
             <input
               id="email"
               type="email"
               defaultValue="e.wuestenhoefer@claimm.de"
-              className="w-full border border-claimm-dark/20 rounded px-3 py-2 text-sm text-claimm-dark bg-white focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red"
+              className="w-full border border-claimm-dark/20 dark:border-white/20 rounded px-3 py-2 text-sm text-claimm-dark dark:text-white bg-white dark:bg-white/10 focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-claimm-dark/70 mb-1.5" htmlFor="password">
+            <label className="block text-xs font-medium text-claimm-dark/70 dark:text-white/60 mb-1.5" htmlFor="password">
               Passwort
             </label>
             <input
               id="password"
               type="password"
               defaultValue="password"
-              className="w-full border border-claimm-dark/20 rounded px-3 py-2 text-sm text-claimm-dark bg-white focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red"
+              className="w-full border border-claimm-dark/20 dark:border-white/20 rounded px-3 py-2 text-sm text-claimm-dark dark:text-white bg-white dark:bg-white/10 focus:outline-none focus:ring-2 focus:ring-claimm-red/40 focus:border-claimm-red"
             />
           </div>
 
@@ -52,7 +52,7 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-center text-xs text-claimm-dark/50 mt-6">
+        <p className="text-center text-xs text-claimm-dark/50 dark:text-white/40 mt-6">
           Microsoft 365 Single Sign-On aktiv
         </p>
       </div>

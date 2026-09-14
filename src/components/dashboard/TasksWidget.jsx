@@ -5,8 +5,8 @@ import { meineAufgaben } from '../../data/mockData'
 
 const PRIORITY_STYLES = {
   hoch: 'text-claimm-red',
-  mittel: 'text-amber-600',
-  niedrig: 'text-claimm-dark/50',
+  mittel: 'text-amber-600 dark:text-amber-400',
+  niedrig: 'text-claimm-dark/50 dark:text-white/40',
 }
 
 export default function TasksWidget() {
@@ -30,10 +30,10 @@ export default function TasksWidget() {
               className="mt-0.5 accent-claimm-red w-4 h-4 shrink-0 cursor-pointer"
             />
             <div className="min-w-0">
-              <p className={`text-sm leading-snug ${a.erledigt ? 'line-through text-claimm-dark/40' : 'text-claimm-dark'}`}>
+              <p className={`text-sm leading-snug ${a.erledigt ? 'line-through text-claimm-dark/40 dark:text-white/30' : 'text-claimm-dark dark:text-white'}`}>
                 {a.titel}
               </p>
-              <p className="text-xs text-claimm-dark/50 mt-0.5">
+              <p className="text-xs text-claimm-dark/50 dark:text-white/40 mt-0.5">
                 {a.projekt} · Fällig {a.faelligkeit}{' '}
                 <span className={`font-medium ${PRIORITY_STYLES[a.prioritaet]}`}>· {a.prioritaet}</span>
               </p>

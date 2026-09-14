@@ -7,12 +7,12 @@ export default function Header({ greetingName, action }) {
   })
 
   return (
-    <header className="flex items-start justify-between px-8 py-6 border-b border-claimm-dark/10">
+    <header className="flex items-start justify-between px-8 py-6 border-b border-claimm-dark/10 dark:border-white/10">
       <div>
-        <h1 className="text-2xl font-semibold text-claimm-dark">
+        <h1 className="text-2xl font-semibold text-claimm-dark dark:text-white">
           {greetingName ? `Guten Morgen, ${greetingName}` : today}
         </h1>
-        {greetingName && <p className="text-sm text-claimm-dark/60 mt-1">{today}</p>}
+        {greetingName && <p className="text-sm text-claimm-dark/60 dark:text-white/50 mt-1">{today}</p>}
       </div>
       {action}
     </header>

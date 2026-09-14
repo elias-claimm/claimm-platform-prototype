@@ -86,18 +86,18 @@ export default function ClaimDashboard() {
   const verantwortliche = employees.map((e) => e.name)
 
   return (
-    <div className="min-h-full bg-claimm-beige">
-      <div className="flex items-center justify-between px-8 py-6 border-b border-claimm-dark/10">
+    <div className="min-h-full bg-claimm-beige dark:bg-claimm-dark transition-colors">
+      <div className="flex items-center justify-between px-8 py-6 border-b border-claimm-dark/10 dark:border-white/10">
         <div>
-          <h1 className="text-2xl font-semibold text-claimm-dark">Claim-Dashboard</h1>
-          <p className="text-sm text-claimm-dark/60 mt-1">Claim- &amp; Contract Management</p>
+          <h1 className="text-2xl font-semibold text-claimm-dark dark:text-white">Claim-Dashboard</h1>
+          <p className="text-sm text-claimm-dark/60 dark:text-white/50 mt-1">Claim- &amp; Contract Management</p>
         </div>
 
-        <div className="inline-flex border border-claimm-dark/20 rounded overflow-hidden">
+        <div className="inline-flex border border-claimm-dark/20 dark:border-white/20 rounded overflow-hidden">
           <button
             onClick={() => handlePerspektivWechsel('AN')}
             className={`px-4 py-2 text-sm font-medium transition-colors ${
-              perspektive === 'AN' ? 'bg-claimm-dark text-white' : 'bg-white text-claimm-dark hover:bg-claimm-dark/5'
+              perspektive === 'AN' ? 'bg-claimm-dark dark:bg-white text-white dark:text-claimm-dark' : 'bg-white dark:bg-white/5 text-claimm-dark dark:text-white hover:bg-claimm-dark/5 dark:hover:bg-white/10'
             }`}
           >
             AN-Perspektive
@@ -105,7 +105,7 @@ export default function ClaimDashboard() {
           <button
             onClick={() => handlePerspektivWechsel('AG')}
             className={`px-4 py-2 text-sm font-medium transition-colors ${
-              perspektive === 'AG' ? 'bg-claimm-dark text-white' : 'bg-white text-claimm-dark hover:bg-claimm-dark/5'
+              perspektive === 'AG' ? 'bg-claimm-dark dark:bg-white text-white dark:text-claimm-dark' : 'bg-white dark:bg-white/5 text-claimm-dark dark:text-white hover:bg-claimm-dark/5 dark:hover:bg-white/10'
             }`}
           >
             AG-Perspektive
