@@ -458,13 +458,26 @@ export const nachtraege = [
 
 // KI-erkannter, noch nicht formalisierter Sachverhalt für Phase 1 (Erkennung)
 export const erkannterSachverhalt = {
-  projekt: 'IW Köln',
-  projektId: 'iw-koeln',
-  quelle: 'Bautagebuch, Eintrag vom 12.09.2026',
+  projekt: 'KAU Köln',
+  projektId: 'kau-koeln',
+  quelle: 'Bautagebuch, Eintrag vom 04.08.2026',
   kiHinweis:
-    'Die KI hat im Bautagebuch einen Hinweis auf zusätzliche Elektroinstallationsarbeiten erkannt, die nicht im Leistungsverzeichnis enthalten sind. Möglicher Anspruchsgrund: zusätzliche Leistung nach § 2 Abs. 6 VOB/B. Ähnliche Hinweise wurden in zwei E-Mails vom 10.09. und 11.09.2026 gefunden.',
-  datum: '2026-09-12',
+    'Die KI hat im Bautagebuch einen Hinweis auf einen verzögerten Baubeginn erkannt: Die Zufahrt zur Baustelle war blockiert, da die Baugenehmigung für das Nachbargrundstück nicht rechtzeitig vorlag. Möglicher Anspruchsgrund: Behinderung nach § 6 VOB/B. Ähnliche Hinweise wurden in der Terminplanfortschreibung vom 03.08.2026 gefunden.',
+  datum: '2026-08-04',
 }
+
+// Zweiter, unabhängiger KI-Hinweis — Beispiel für die laufende automatische
+// Erkennung weiterer potenzieller Nachträge im Projektportfolio.
+export const weitereErkannteSachverhalte = [
+  {
+    projekt: 'IW Köln',
+    projektId: 'iw-koeln',
+    quelle: 'Bautagebuch, Eintrag vom 12.09.2026',
+    kiHinweis:
+      'Die KI hat im Bautagebuch einen Hinweis auf zusätzliche Elektroinstallationsarbeiten erkannt, die nicht im Leistungsverzeichnis enthalten sind. Möglicher Anspruchsgrund: zusätzliche Leistung nach § 2 Abs. 6 VOB/B. Ähnliche Hinweise wurden in zwei E-Mails vom 10.09. und 11.09.2026 gefunden.',
+    datum: '2026-09-12',
+  },
+]
 
 // ---------------------------------------------------------------------------
 // Nachtragslebenszyklus — Beispielvorgang NT-2026-014 (KAU Köln)

@@ -8,18 +8,29 @@ function formatEUR(value) {
 export default function ClaimsTable({ nachtraege, onSelect }) {
   return (
     <div className="bg-white border border-claimm-dark/10 rounded-md overflow-x-auto">
-      <table className="w-full text-sm">
+      <table className="w-full text-sm table-fixed">
+        <colgroup>
+          <col className="w-[115px]" />
+          <col className="w-[125px]" />
+          <col className="w-[140px]" />
+          <col className="w-[120px]" />
+          <col className="w-[105px]" />
+          <col className="w-[95px]" />
+          <col className="w-[95px]" />
+          <col className="w-[100px]" />
+          <col className="w-[110px]" />
+        </colgroup>
         <thead>
           <tr className="border-b border-claimm-dark/10 text-left text-xs text-claimm-dark/50">
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Nachtrag-Nr.</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Projekt</th>
-            <th className="px-4 py-3 font-medium">Beschreibung</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Anspruchsgrund</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap text-right">Angemeldeter Wert</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap text-right">Geprüfter Wert</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Status</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Frist</th>
-            <th className="px-4 py-3 font-medium whitespace-nowrap">Verantwortlich</th>
+            <th className="px-2.5 py-3 font-medium">Nachtrag-Nr.</th>
+            <th className="px-2.5 py-3 font-medium">Projekt</th>
+            <th className="px-2.5 py-3 font-medium">Beschreibung</th>
+            <th className="px-2.5 py-3 font-medium">Anspruchsgrund</th>
+            <th className="px-2.5 py-3 font-medium text-right">Angemeldeter Wert</th>
+            <th className="px-2.5 py-3 font-medium text-right">Geprüfter Wert</th>
+            <th className="px-2.5 py-3 font-medium">Status</th>
+            <th className="px-2.5 py-3 font-medium">Frist</th>
+            <th className="px-2.5 py-3 font-medium">Verantwortlich</th>
           </tr>
         </thead>
         <tbody>
@@ -29,19 +40,27 @@ export default function ClaimsTable({ nachtraege, onSelect }) {
               onClick={() => onSelect(n)}
               className="border-b border-claimm-dark/5 last:border-0 hover:bg-claimm-beige/50 cursor-pointer transition-colors"
             >
-              <td className="px-4 py-3 font-medium text-claimm-dark whitespace-nowrap">{n.id}</td>
-              <td className="px-4 py-3 text-claimm-dark whitespace-nowrap">{n.projekt}</td>
-              <td className="px-4 py-3 text-claimm-dark/80 max-w-xs">{n.beschreibung}</td>
-              <td className="px-4 py-3 text-claimm-dark/70 whitespace-nowrap">{n.anspruchsgrund}</td>
-              <td className="px-4 py-3 text-claimm-dark text-right whitespace-nowrap">
+              <td className="px-2.5 py-3 font-medium text-claimm-dark truncate">{n.id}</td>
+              <td className="px-2.5 py-3 text-claimm-dark truncate" title={n.projekt}>
+                {n.projekt}
+              </td>
+              <td className="px-2.5 py-3 text-claimm-dark/80 truncate" title={n.beschreibung}>
+                {n.beschreibung}
+              </td>
+              <td className="px-2.5 py-3 text-claimm-dark/70 truncate" title={n.anspruchsgrund}>
+                {n.anspruchsgrund}
+              </td>
+              <td className="px-2.5 py-3 text-claimm-dark text-right truncate">
                 {formatEUR(n.angemeldeterWert ?? n.geforderterWert)}
               </td>
-              <td className="px-4 py-3 text-claimm-dark text-right whitespace-nowrap">{formatEUR(n.gepruefterWert)}</td>
-              <td className="px-4 py-3">
+              <td className="px-2.5 py-3 text-claimm-dark text-right truncate">{formatEUR(n.gepruefterWert)}</td>
+              <td className="px-2.5 py-3">
                 <StatusChip status={n.status} />
               </td>
-              <td className="px-4 py-3 text-claimm-dark/70 whitespace-nowrap">{n.frist}</td>
-              <td className="px-4 py-3 text-claimm-dark/70 whitespace-nowrap">{n.verantwortlich}</td>
+              <td className="px-2.5 py-3 text-claimm-dark/70 truncate">{n.frist}</td>
+              <td className="px-2.5 py-3 text-claimm-dark/70 truncate" title={n.verantwortlich}>
+                {n.verantwortlich}
+              </td>
             </tr>
           ))}
           {nachtraege.length === 0 && (
